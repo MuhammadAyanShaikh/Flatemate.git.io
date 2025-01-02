@@ -32,13 +32,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg"> 
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="Resources/FlateMate.png" alt="Logo" class="imglogo"></a>
+            <a class="navbar-brand" href="Index.html"><img src="Resources/FlateMate.png" alt="Logo" class="imglogo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item" id="lnk1"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item" id="lnk1"><a class="nav-link" href="Index.html">Home</a></li>
                     <li class="nav-item" id="lnk2"><a class="nav-link" href="About.html">About Us</a></li>
                     <li class="nav-item" id="lnk3"><a class="nav-link" href="Contact.html">Contact Us</a></li>
                     <li class="nav-item"><button class="btn btn-primary">Sign Up</button></li>
@@ -52,76 +52,89 @@
         <div class="container">
             <h1 id="mainh1" >Your Mate FlateMate</h1>
             <p id="mainh2" >Find The Best Hostels Of The Town All Over The World!</p>
-            <a href="index.html" class="btn btn-outline-light" id="butt11">Explore More</a>
+            <a href="Index.html" class="btn btn-outline-light" id="butt11">Explore More</a>
         </div>
     </section>
 
     <!-- Search Section -->
-    <div class="container">
-        <div class="search-box text-center">
-            <form class="row">
-                <div class="col-md-3 mb-3">
-                    <label>Location</label>
-                    <input type="text" class="form-control" placeholder="Enter Location">
-                </div>
-                <div class="col-md-2 mb-3">
-                    <label>Check-in</label>
-                    <input type="date" class="form-control">
-                </div>
-                <div class="col-md-2 mb-3">
-                    <label>Check-out</label>
-                    <input type="date" class="form-control">
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label>Guests</label>
-                    <select class="form-select">
-                        <option>1 Guest</option>
-                        <option>2 Guests</option>
-                        <option>3+ Guests</option>
-                    </select>
-                </div>
-                <div class="col-md-2 d-flex" style="margin-top: 23px; height: 37px;">
-                    <button class="btn btn-light w-100 srchbtn" style="background-color: rgb(146, 146, 255); border: 0px;">Search</button>
-                </div>
-            </form>
+<div class="container">
+    <div class="search-box text-center">
+        <form class="row" id="searchForm">
+            <div class="col-md-3 mb-3">
+                <label>Location</label>
+                <select id="locationSelect" class="form-select">
+                    <option value="">Select Location</option>
+                    <option value="Ikeja, Lagos">Hyderabad</option>
+                    <option value="Royal Taj">Karachi</option>
+                    <option value="Apapa, Lagos">Islamabad</option>
+                    <option value="Lekki, Lagos">Lahore</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label>Check-in</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-2 mb-3">
+                <label>Check-out</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label>Guests</label>
+                <select class="form-select">
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3+ Guests</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-flex" style="margin-top: 23px; height: 37px;">
+                <button type="button" class="btn btn-light w-100 srchbtn" style="background-color: rgb(146, 146, 255); border: 0px;" onclick="filterHostels()">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Featured Hostels -->
+<section class="container featured-hostels my-5" id="hostelsSection">
+    <h2 class="text-center mb-4">Featured Hostels</h2>
+    <div class="row" id="hostelsList">
+        <div class="col-md-3 hostel" data-location="Ikeja, Lagos">
+            <div id="c1">
+                <img src="Resources/img1.png" alt="Hostel">
+                <h5 class="mt-2">Hyderabad Hostel</h5>
+                <p>$200,000/month</p>
+                <p style="margin-top: -12px;">3+ Guests</p>
+            </div>
+            <button class="btn btn-primary">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Royal Taj">
+            <div id="c2">
+                <img src="Resources/img2.png" alt="Hostel">
+                <h5 class="mt-2">Karachi Hostel</h5>
+                <p>$200,000/month</p>
+                <p style="margin-top: -12px;">3+ Guests</p>
+            </div>
+            <button class="btn btn-primary">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Apapa, Lagos">
+            <div id="c3">
+                <img src="Resources/img3.png" alt="Hostel">
+                <h5 class="mt-2">Islamabad Hostel</h5>
+                <p>$200,000/month</p>
+                <p style="margin-top: -12px;">3+ Guests</p>
+            </div>
+            <button class="btn btn-primary">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Lekki, Lagos">
+            <div id="c4">
+                <img src="Resources/img4.png" alt="Hostel">
+                <h5 class="mt-2">Lahore Hostel</h5>
+                <p>$200,000/month</p>
+                <p style="margin-top: -12px;">3+ Guests</p>
+            </div>
+            <button class="btn btn-primary">Book Now</button>
         </div>
     </div>
-
-    <!-- Featured Hostels -->
-    <section class="container featured-hostels my-5">
-        <h2 class="text-center mb-4">Featured Hostels</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <div id="c1">
-                <img src="Resources/img1.png" alt="Hostel">
-                <h5 class="mt-2">Ikeja, Lagos</h5>
-                <p>$200,000/month</p></div>
-                <button class="btn btn-primary">Book Now</button>
-            </div>
-            <div class="col-md-3">
-                <div  id="c2">
-                <img src="Resources/img2.png" alt="Hostel">
-                <h5 class="mt-2">Royal Taj</h5>
-                <p>$200,000/month</p>
-                </div>
-                <button class="btn btn-primary">Book Now</button>
-            </div>
-            <div class="col-md-3">
-                <div id="c3">
-                <img src="Resources/img3.png" alt="Hostel">
-                <h5 class="mt-2">Apapa, Lagos</h5>
-                <p>$200,000/month</p></div>
-                <button class="btn btn-primary">Book Now</button>
-            </div>
-            <div class="col-md-3">
-                <div id="c4">
-                <img src="Resources/img4.png" alt="Hostel">
-                <h5 class="mt-2">Lekki, Lagos</h5>
-                <p>$200,000/month</p></div>
-                <button class="btn btn-primary">Book Now</button>
-            </div>
-        </div>
-    </section>
+</section>
 
     <!-- Promotions -->
     <section class="container promotions my-5 text-center" style="padding-top: 50px;">
@@ -152,6 +165,23 @@
             <p>© FlateMate 2024. All rights reserved.</p>
         </div>
     </footer>
+
+<!-- JavaScript to Filter Hostels -->
+<script>
+    function filterHostels() {
+        const selectedLocation = document.getElementById('locationSelect').value;
+        const hostels = document.querySelectorAll('.hostel');
+
+        hostels.forEach(hostel => {
+            const hostelLocation = hostel.getAttribute('data-location');
+            if (selectedLocation === "" || hostelLocation === selectedLocation) {
+                hostel.style.display = 'block';
+            } else {
+                hostel.style.display = 'none';
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
